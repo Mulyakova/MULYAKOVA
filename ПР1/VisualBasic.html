@@ -1,0 +1,316 @@
+<html>
+<head>
+    <title> Visual Basic </title>
+    <link rel=stylesheet type="text/css" href="2.css" />
+    <style>
+        body {
+            background: url(0.jpg);
+            background-size: cover;
+        }
+    </style>
+    <style>
+
+        table.t1 {
+            margin: 1em auto;
+            border-collapse: collapse;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .t1 th, .t1 td {
+            padding: 4px 8px;
+        }
+
+        .t1 thead th {
+            background: #4f81bd;
+            text-transform: lowercase;
+            text-align: left;
+            font-size: 15px;
+            color: #fff;
+        }
+
+        .t1 tr {
+            border-right: 1px solid #95b3d7;
+        }
+
+        .t1 tbody tr {
+            border-bottom: 1px solid #95b3d7;
+        }
+
+            .t1 tbody tr:nth-child(odd) {
+                background: #dbe5f0;
+            }
+
+            .t1 tbody th, .t1 tbody tr:nth-child(even) td {
+                border-right: 1px solid #95b3d7;
+            }
+
+        .t1 tfoot th {
+            background: #4f81bd;
+            text-align: left;
+            font-weight: normal;
+            font-size: 10px;
+            color: #fff;
+        }
+
+        .t1 tr *:nth-child(3), .t1 tr *:nth-child(4) {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <h1 class='zagolovok'> Visual Basic</h1>
+    <h2 class='podzagolovok'>Разделы</h2>
+    <ol>
+        <li><a href="#story">История создания</a></li>
+        <li><a href="#obzor">Краткий обзор языка</a></li>
+        <li><a href="#kod">Примеры кода</a></li>
+    </ol><br />
+    <a name="story">
+        <h2 class='podzagolovok'>История создания</h2>
+        <P class='text'>
+            <img src="1.jpg" align="right" width="200px" class="pic">
+
+            Язык <dfn>BASIC</dfn> был разработан в 1964 году. Он создавался для выполнения учебных задач, при которых обучающиеся могли бы использовать простые алгоритмы для освоения навыков программирования. Данный язык вывел образование на новый уровень, а программисты начали соревноваться между собой, создавая все новые и новые диалекты.
+            В число людей, начавших свою профессиональную карьеру с использования BASIC, входил <a href="https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%B9%D1%82%D1%81,_%D0%91%D0%B8%D0%BB%D0%BB">Билл Гейтс</a>, который в возрасте 13 лет написал на нем свою первую программу. В 20 лет он вместе с Полом Алленом получал свои дивиденды от реализации версии Altair BASIC.
+            В 80-х годах популярность BASIC стала постепенно снижаться. Разрабатываемые в то время языки уже не имели столь сложного синтаксиса, а их спектр возможностей становился все шире. Лишь Microsoft продолжал выпускать разновидности BASIC, сначала создав QBasic, а затем и Visual Basic.
+            <br /><br /></p>
+<p class="text1">
+            На первых порах версии Microsoft Visual Basic не были столь популярны. Дело в том, что они практически не отличались от QBasic. Исключениями являлись разве что графический интерфейс и подсветка синтаксиса. Но Microsoft внесли существенные коррективы в версию 3.0.
+            Комплектация Professional позволяла разработчикам взаимодействовать с базой данных Access, а благодаря графическим возможностям с языком смогли работать даже те люди, которые не имели навыков программирования. Плюс ко всему, увеличилась скорость работы, а установка ПО стала значительно проще.
+            <br /><br />
+            В 1995 году появилась Windows 95, что позволило Visual Basic 4.0. выйти в лидеры. Был создан полноценный компилятор, появилась возможность разрабатывать 16 и 32-ядерные приложения, и повысилось быстродействие.
+            Последняя версия традиционного Visual Basic вышла в свет в 1998 году. С этого момента Microsoft поменял стратегию, обеспечив два вектора развития языка: VB на платформе .NET и адаптированные версии для решения локальных задач (VBA, VBScript, eVB).
+</P><br />
+    </a>
+    <a name="obzor">
+        <h2 class='podzagolovok'>Краткий обзор языка</h2>
+        <P class='text'>
+            Можно выделить несколько основных моментов, отличающих Visual Basic от других ОПП языков с C-подобным синтаксисом. <br />
+            <ol id="top">
+                <li>Наличие drag and drop инструмента для создания и размещения форм в интерфейсе - окон, кнопок и т. п. По сути, приложение в VB можно собирать из разных элементов как конструктор.</li>
+                <li>Уравнивание логических и цифровых переменных. Постоянная true в VB принимает значение -1, а ее противоположность, false - значение 0. Такой подход объясняется работой ячеек памяти.</li>
+                <li>Наличие типа variant, применяемого для переменных, изначально объявленных без указания конкретного стандартного типа, как, например, integer или string. Оператор Deftype позволяет установить и другие типы по умолчанию, такие как DefInt, DefObj и другие. Чтобы отменить присвоенный по умолчанию тип нужно использовать специальный символ-суффикс в имени переменной.</li>
+                <li>Автоматическое превращение целых чисел (int) в вещественные (double) при делении через оператор /. Обратный слеш (\) проводит усечение дробной части числа при делении</li>
+                <li>Определение нижней и верхней границы при объявлении массивов. Подобный механизм реализован и в других старых языках, таких как Pascal и Fortran. Оператор Option Basе позволяет выставить нижнюю границу массива в VB по умолчанию, но это может привести к ошибкам в программе. В версиях Visual Basic .NET и Script нижняя граница массива фиксируется на 0 или 1. В Visual Basic 6.0 доступны более низкие значения.</li>
+            </ol>
+        </P>
+        <h3 class='podzagolovok1'>К сильным сторонам Visual Basic относят:</h3> <br />
+        <ul>
+            <li>Быструю разработку под Windows. Это – ключевая особенность ЯП. Есть возможность создания софта с соответствующим графическим интерфейсом.</li>
+            <li>Наличие защиты от ошибок. Речь идет о тех, что связаны с указателями и доступом к памяти</li>
+            <li>Visual Basic предусматривает применение большинства <ins>WinAPI</ins> функций. Это дает возможность расширения функционала языка.</li>
+            <li>Наличие возможности компиляции в машинный код или P-код.</li>
+        </ul>
+        <p class="text">
+            А еще Visual Basic грамотно использует виртуальную память и относительно прост в освоении. С ним может справиться даже новичок.<br />
+        </p>
+        <h3 class='podzagolovok1'>Минусы:</h3>
+        <p class="text">
+            <img src="krid.png" align="left" width="300px" class="pic1">
+            Несмотря на ряд сильных сторон, о недостатках рассматриваемого ЯП тоже забывать не нужно. К ним относят:<br />
+        </p>
+        <ol id="pik">
+            <li>Поддержку только Windows и Mac OS X.</li>
+            <li>Плохую скорость работы. В небольших утилитах это незаметно, а вот в крупных проектах – вполне. Связан соответствующий момент с тем, что ЯП использует при запуске контента реализацию через библиотеку времени исполнения.<br /></li>
+            <li>Отсутствие наследования реализации объектов. Соответствующая операция поддерживается лишь интерфейсами.</li>
+        </ol>
+
+        <code>Также стоит обратить внимание на то, что программа Visual Basic требует предварительной установки библиотеки msvbmXX.dll.</code><br /><br />
+        <p class="text">
+            Исходя из всего сказанного, следует вывод о том, что рассмотренный язык программирования – это простой, хоть и не самый популярный ЯП от Microsoft. Он в основном изучается новичками на первых порах погружения в разработку.<br />
+            Среди современных популярных ЯП встречается редко, но все равно входит <i>в ТОП-10 programming languages</i>. Это – выход для тех, кто хочет начать плавное погружение в основы объектно-ориентированного программирования, а также привыкших использовать Windows на компьютере.<br />
+            Критика<br /><br />
+            Соответствующий язык программирования часто подвергается критике. Из-за этого он в последние годы сдает позиции. Чаще всего осуждению подвергаются следующие моменты:<br />
+        </p>
+        <ol id="ppp">
+            <li>Возможность отключения средства слежения за заданными переменными и неявное преобразование переменных.<br /></li>
+            <li>Наличие самостоятельного типа данных variant.<br /></li>
+            <li>Отсутствие указателей и низкоуровневого доступа к памяти. У соответствующего языка нет возможности экспорта функций в нативных библиотеках. Стандартные средства разработки консольного ПО тоже отсутствуют.<br /></li>
+        </ol>
+        <p class="text">
+            <del>Все осуждаемые моменты вытекают из главного плюса ЯП – его простота при создании графических интерфейсов. Программисты часто применяют соответствующий «синтаксис» для interfaces.</del><br />
+        </p>
+        <h3 class='podzagolovok1'>Где использовать</h3><br />
+        <p class="text">
+
+            <span class="e">Рассматриваемый</span> язык разработки – не самый популярный, но все еще использующийся программистами. Он необходим для того, чтобы создавать специализированный контент под Windows.<br />
+            <kbd>Сферы применения:</kbd> <br />
+        </p>
+        <ol id="kkk">
+            <li class="b">бизнес-приложения;</li>
+            <li>игровой софт;</li>
+            <li>макросы для «офисных» программ;</li>
+            <li>простые сайты;</li>
+            <li class="d">консольные небольшие утилиты;</li>
+            <li>развлекательное программное обеспечение;</li>
+            <li>базы данных и соответствующие запросы;</li>
+            <li>программы, облегчающие повседневную жизнь.</li>
+        </ol>
+        <P class='line'>
+            <q>А вот для работы с ИИ и сложными структурами это далеко не самый подходящий вариант. Лучше всего его задействовать тем, кто готов всецело посвятить себя Windows и иным продуктам от «Майкрософт».</q><br />
+        </P>
+    </a>
+    <a name="kod">
+        <hr>  <h2 class='podzagolovok'>Примеры кода</h2><hr>
+        <P class='text'>
+            Простейший пример программы для VB.NET 9 выглядит так<br /><br />
+            <table class="table">
+                <tr>
+                    <td>
+                        <span class="r">Module Module1</span>
+                        <br />
+                        <span class="z">Sub</span> <span class="w">Main()</span>
+    <br />
+    <span class="s">Console.WriteLine</span> <span class="f">("Привет, Мир!")</span>
+    <br />
+    <span class="i">End</span> <span class="z">Sub</span>
+    <br />
+    <span class="i">End</span> <span class="r">Module</span>
+    <br />
+</td>
+                </tr>
+            </table>
+            <br /><br />
+            Такой код выводит на экран надпись “Привет, Мир!”<br /><br />
+            В <span class="a">Visual Basic for Application</span> такая же программа будет выглядеть немного иначе.<br /><br />
+            <table class="table">
+                <tr>
+                    <td>
+                        <span class="z">Sub</span> <span class="w">Hello()</span><br />
+                        <span class="z">MsgBox</span><span class="f">("Hello, World!")</span><br />
+                        <span class="i">End</span> <span class="z">Sub</span> <span class="w">Hello()</span> <br />
+                    </td>
+                </tr>
+            </table>
+            <br /><br />
+            Этот код можно поместить во встроенный редактор макросов <span class="c">Microsoft</span> Office Word, сохранить как новый макрос и запустить в открытом документе.<br /><br />
+            <img src="5.png" width="700px"><br /><br /><br />
+            В VBA можно прописать и более сложную программу. Вот пример кода, выводящий на экран факториалы чисел от 0 до 10.<br /><br />
+            <table class="table">
+                <tr>
+                    <td>
+
+                        Sub Factorial()<br />
+                        Dim x As Long<br />
+                        Dim res As String<br />
+                        x = 1<br />
+                        For i = 0 To 10<br />
+                        res = res & CStr(i) & "! = " & CStr(x) & Chr(10)<br />
+                        x = x * (i + 1)<br />
+                        Next i<br />
+                        MsgBox (res)<br />
+                        End Sub<br />
+
+                    </td>
+                </tr>
+            </table>
+            <br /><br />
+            Здесь мы задаем условия вычисления и составляем сообщение, выводимое на экран. Оператор CStr конвертирует числовое значение в текстовые символы, а команда Chr(10) добавляет перевод строки.<br />
+            <img src="6.png" width="700px"><br /><br /><br />
+
+        </P>
+    </a>
+    <table class="t1" summary="Top 10 downloaded movies in 2011 using BitTorrent, in descending order, listing number of downloads and worldwide cinema grosses">
+        <caption>Наиболее распространенные типы данных</caption>
+        <thead>
+            <tr>
+                <th>№</th>
+                <th>Тип данных</th>
+                <th>Диапазон</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><th>1</th><td>Byte (целый без знака)</td><td>От 0 до 255</td></tr>
+            <tr><th>2</th><td>Boolean(логический)</td><td>True или False</td></tr>
+            <tr><th>3</th><td>Integer(целый)</td><td>от - 32768 до 32767</td></tr>
+            <tr><th>4</th><td>Long(длинный целый)</td><td>от - 2147483648 до 2147483647</td></tr>
+            <tr><th>5</th><td>Single(число с плавающей запятой обычной точности)</td><td>От - 3.402823Е +38 до - 1.401298Е-48 и от 1.401298Е-45 до 3.402823Е+38</td></tr>
+            <tr><th>6</th><td>Double (число с плавающей запятой двойной точности)</td><td>От -1,79769313486232Е308 до-4,94065645841247Е-324 для отрицательных значений; от 4,94065645841247Е-324 до1,79769313486232Е308 для положительных значений</td></tr>
+            <tr><th>7</th><td>Date(дата и время)</td><td>от 01. 01. 100 до 31. 12.9999</td></tr>
+            <tr><th>8</th><td>String(строка)</td><td>от 0 до 65535 символов</td></tr>
+            <tr><th>9</th><td>Variant</td><td>Любой встроенный тип данных</td></tr>
+
+        </tbody>
+    </table>
+    <p class="text">
+        Использованные теги:
+        <ol id="ppp">
+            <li>html</li>
+            <li>title</li>
+            <li>head</li>
+            <li>style</li>
+            <li>body</li>
+            <li>h1</li>
+            <li>h2</li>
+            <li>h3</li>
+            <li>ol</li>
+            <li>ul</li>
+            <li>li</li>
+            <li>a</li>
+            <li>p</li>
+            <li>br</li>
+            <li>img</li>
+            <li>table</li>
+            <li>tr</li>
+            <li>th</li>
+            <li>td</li>
+            <li>caption</li>
+            <li>thead</li>
+            <li>tbody</li>
+            <li>code</li>
+            <li>del</li>
+            <li>dfn</li>
+            <li>ins</li>
+            <li>q</li>
+            <li>kbd</li>
+            <li>i</li>
+            <li>hr</li>
+        </ol>
+        </p>
+    <p class="text">
+        Использованные css-свойства:
+        <ol id="ppp">
+            <li>text-align</li>
+            <li>font-size</li>
+            <li>text-decoration</li>
+            <li>font-family</li>
+            <li>padding</li>
+            <li>list-style-type</li>
+            <li>list-style-position</li>
+            <li>float</li>
+            <li>margin</li>
+            <li>border</li>
+            <li>width</li>
+            <li>margin</li>
+            <li>background-color</li>
+            <li>src</li>
+            <li>text-shadow</li>
+            <li>background</li>
+            <li>background-size</li>
+            <li>border-collapse</li>
+            <li>color</li>
+            <li>text-transform</li>
+            <li>border-right</li>
+            <li>border-bottom</li>
+            <li>font-weight</li>
+            <li>font-variant</li>
+            <li>font-style</li>
+            <li>image-rendering</li>
+            <li>line-break</li>
+            <li>hyphens</li>
+            <li>text-align-last</li>
+            <li>word-spacing</li>
+            <li>letter-spacing</li>
+            <li>text-indent</li>
+            <li>line-height</li>
+            <li>border-style</li>
+            <li>border-color</li>
+            <li>border-width</li>
+            <li>border-left</li>
+            <li>content</li>
+            <li>height</li>
+            <li>display</li>
+        </ol>
+    </p>
+</body>
+</html>
